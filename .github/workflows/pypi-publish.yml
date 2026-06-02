@@ -1,8 +1,6 @@
 name: Publish Python Package to PyPI
 
 on:
-  release:
-    types: [published]
   workflow_dispatch: # Allows you to trigger the upload manually with 1 click
 
 jobs:
@@ -15,7 +13,7 @@ jobs:
     - name: Set Up Python Environment
       uses: actions/setup-python@v5
       with:
-        python_python-version: '3.10'
+        python-version: '3.10'
 
     - name: Install Compiling Tools
       run: |
