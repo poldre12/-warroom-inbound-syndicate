@@ -1,11 +1,13 @@
 name: Publish Python Package to PyPI
 
 on:
-  workflow_dispatch: # Allows you to trigger the upload manually with 1 click
+  workflow_dispatch: # Allows manual trigger with 1 click
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true" # Safely clears the Node deprecation warnings
     steps:
     - name: Checkout Code Repository
       uses: actions/checkout@v4
@@ -13,7 +15,7 @@ jobs:
     - name: Set Up Python Environment
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.10' # Corrected parameter key string
 
     - name: Install Compiling Tools
       run: |
