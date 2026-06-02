@@ -21,15 +21,15 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install build twine
-      working-directory: .
+      working-directory: ./-warroom-inbound-syndicate
 
     - name: Build Software Package Modules
       run: python -m build
-      working-directory: .
+      working-directory: ./-warroom-inbound-syndicate
 
     - name: Publish Package to PyPI Index
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
       run: twine upload dist/*
-      working-directory: .
+      working-directory: ./-warroom-inbound-syndicate
