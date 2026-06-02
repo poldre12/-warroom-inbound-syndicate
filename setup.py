@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="warroom",
-    version="2026.6.2",
+    name="warroomgroup", # Using a unique name to prevent index naming conflicts
+    version="2026.6.3",
     author="Enterprise Inbound Syndicate",
     author_email="admin@warroomgroup.org",
     description="Corporate inbound pipeline allocation engines and semantic schema validation matrices.",
